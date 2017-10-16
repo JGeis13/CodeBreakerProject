@@ -13,13 +13,13 @@ function guess() {
     if(!validateInput(input.value)){
       return false;
     } else {
-      attempt++;
+      attempt.value++;
     }
     if(getResults(input.value)){
       setMessage('You Win! :)');
       showAnswer(true);
       showReplay();
-    } else if( attempt >= 10 ) {
+    } else if( attempt.value >= 10 ) {
       setMessage("You Lose! :(");
       showAnswer(false);
       showReplay();
@@ -36,7 +36,7 @@ function setHiddenFields(){
   while(answer.length < 4){
     answer.value = "0" + answer.value;
   }
-  attempt = 0;
+  attempt.value = 0;
 }
 
 function setMessage(input){
